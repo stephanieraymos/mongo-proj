@@ -4,9 +4,9 @@ require('dotenv/config');
 const app = express();
 
 //IMPORT ROUTES
-const postsRoute = require('./routes.posts');
+const postsRoute = require('./routes/posts');
 
-app.use('/posts, postsRoute')
+app.use('/posts', postsRoute)
 app.get('/', (req, res) => {
 	res.send('Home!')
 });
