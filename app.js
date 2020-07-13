@@ -7,6 +7,8 @@ const app = express();
 const postsRoute = require('./routes/posts');
 
 app.use('/posts', postsRoute)
+
+//HOME ROUTE
 app.get('/', (req, res) => {
 	res.send('Home!')
 });
