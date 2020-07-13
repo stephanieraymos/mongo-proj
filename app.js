@@ -6,6 +6,8 @@ const app = express();
 //IMPORT ROUTES
 const postsRoute = require('./routes/posts');
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 app.use('/posts', postsRoute)
 
 //HOME ROUTE
