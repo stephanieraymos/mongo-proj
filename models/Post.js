@@ -15,4 +15,4 @@ const PostSchema = mongoose.Schema({
   },
 })
 
-module.exports = mongoose.model('Posts', PostSchema) //Shows up in MLABS
+module.exports = mongoose.model('Post', PostSchema) //Shows up in MLABS

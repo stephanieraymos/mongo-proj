@@ -11,18 +11,14 @@ router.get('/specific', (req, res) => {
 });
 
 router.post('/', (req, res, next) => {
-  const post = new Post({
-    title: req.body.title,
-    description: req.body.description
-  });
-
-  post.save()
-    .then(data => {
-      res.json(data);
+  Post.create(req.body)
+    .then(post => {
+      console.log('Post created!', post);
+      res.statusCode = 200;
+      res.setHeader('Content-Type', 'application/json');
+      res.json(post);
     })
-    .catch(err => {
-      res.json({ message: err });
-    });
-});
+    .catch(err => next(err));
+  })
 
 module.exports = router;
